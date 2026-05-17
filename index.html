@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>黑灯下的信号</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="start-screen" class="screen start-screen">
+        <div class="start-copy">
+          <p class="file-mark">War Office / Fictional Dossier / 1942</p>
+          <h1>黑灯下的信号</h1>
+          <p>
+            伦敦的灯火被布帘吞没，电报声在地下室里像雨一样落下。
+            你以伪造姓名生活在战时英国，带着一项将许多人推向海上的任务。
+          </p>
+          <p class="content-note">
+            本作是虚构反战谍战文游，不美化纳粹主义，不包含真实可操作的间谍教学。
+          </p>
+        </div>
+
+        <div class="start-actions" aria-label="游戏入口">
+          <button id="new-game" class="primary-button" type="button">开始游戏</button>
+          <button id="continue-game" class="secondary-button" type="button">继续游戏</button>
+        </div>
+      </section>
+
+      <section id="game-screen" class="screen game-screen hidden" aria-live="polite">
+        <aside class="dossier-panel" aria-label="状态档案">
+          <div>
+            <p class="file-mark">Blackout London</p>
+            <h2>黑灯下的信号</h2>
+          </div>
+
+          <dl class="scene-meta">
+            <div>
+              <dt>日期</dt>
+              <dd id="scene-date">1942年</dd>
+            </div>
+            <div>
+              <dt>地点</dt>
+              <dd id="scene-location">伦敦</dd>
+            </div>
+          </dl>
+
+          <div class="stats" aria-label="角色属性">
+            <div class="stat-row">
+              <span>伪装</span>
+              <meter id="stat-cover" min="0" max="10" value="6"></meter>
+              <strong id="stat-cover-value">6</strong>
+            </div>
+            <div class="stat-row">
+              <span>情报</span>
+              <meter id="stat-intel" min="0" max="10" value="0"></meter>
+              <strong id="stat-intel-value">0</strong>
+            </div>
+            <div class="stat-row">
+              <span>良知</span>
+              <meter id="stat-conscience" min="0" max="10" value="0"></meter>
+              <strong id="stat-conscience-value">0</strong>
+            </div>
+            <div class="stat-row">
+              <span>怀疑</span>
+              <meter id="stat-suspicion" min="0" max="10" value="0"></meter>
+              <strong id="stat-suspicion-value">0</strong>
+            </div>
+          </div>
+
+          <div class="route-box">
+            <span>路线状态</span>
+            <strong id="route-hint">尚未定局</strong>
+          </div>
+        </aside>
+
+        <article class="story-panel">
+          <header class="story-header">
+            <p id="node-kicker">1942年 伦敦</p>
+            <h2 id="node-title">档案打开</h2>
+          </header>
+
+          <div id="story-text" class="story-text"></div>
+
+          <div id="choices" class="choices" aria-label="选择"></div>
+        </article>
+
+        <aside class="utility-panel" aria-label="游戏工具">
+          <div class="tool-group">
+            <button id="save-game" class="tool-button" type="button">保存</button>
+            <button id="restart-game" class="tool-button danger" type="button">重新开始</button>
+          </div>
+
+          <section class="history-card">
+            <div class="history-heading">
+              <h3>历史记录</h3>
+              <span id="save-status">未保存</span>
+            </div>
+            <ol id="history-list" class="history-list"></ol>
+          </section>
+        </aside>
+      </section>
+
+      <section id="ending-screen" class="screen ending-screen hidden">
+        <p class="file-mark">Case Closed</p>
+        <h2 id="ending-title">结局</h2>
+        <div id="ending-text" class="ending-text"></div>
+        <button id="ending-restart" class="primary-button" type="button">重新开始</button>
+      </section>
+    </main>
+
+    <script src="story.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
