@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>黑灯下的信号</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="start-screen" class="screen start-screen">
+        <div class="start-copy">
+          <p class="file-mark">War Office / Dossier R-17742 / 1942</p>
+          <h1>黑灯下的信号</h1>
+          <p>
+            伦敦的夜把窗户、姓名和真相一并遮住。你以 Adrian Vale 的身份醒来，
+            桌上有一封没有邮戳的信，窗外有一座正在学会沉默的城市。
+          </p>
+          <p>
+            五个夜晚，三种结局。每一次停顿都会被记下，只是未必立刻显形。
+          </p>
+        </div>
+
+        <div class="start-actions" aria-label="游戏入口">
+          <button id="new-game" class="primary-button" type="button">开始游戏</button>
+          <button id="continue-game" class="secondary-button" type="button">继续游戏</button>
+        </div>
+      </section>
+
+      <section id="game-screen" class="screen game-screen hidden" aria-live="polite">
+        <aside class="dossier-panel" aria-label="档案状态">
+          <div>
+            <p class="file-mark">Blackout London</p>
+            <h2>黑灯下的信号</h2>
+          </div>
+
+          <dl class="scene-meta">
+            <div>
+              <dt>章节</dt>
+              <dd id="scene-chapter">第一章</dd>
+            </div>
+            <div>
+              <dt>时间</dt>
+              <dd id="scene-date">1942年</dd>
+            </div>
+            <div>
+              <dt>地点</dt>
+              <dd id="scene-location">伦敦</dd>
+            </div>
+          </dl>
+
+          <section class="status-card">
+            <span>档案评语</span>
+            <p id="dossier-note">身份尚稳，但纸面上的安静不等于安全。</p>
+          </section>
+
+          <section class="pressure-card">
+            <span>当前压力</span>
+            <p id="pressure-note">雨声盖住了许多脚步。</p>
+          </section>
+
+          <section class="impression-card">
+            <span>人物印象</span>
+            <dl id="impression-list"></dl>
+          </section>
+        </aside>
+
+        <article class="story-panel">
+          <header class="story-header">
+            <p id="node-kicker">1942年 / 伦敦</p>
+            <h2 id="node-title">档案打开</h2>
+          </header>
+
+          <figure id="scene-figure" class="scene-figure hidden">
+            <img id="scene-image" alt="">
+            <figcaption id="scene-caption"></figcaption>
+          </figure>
+
+          <div id="story-text" class="story-text"></div>
+
+          <div id="choices" class="choices" aria-label="选择"></div>
+        </article>
+
+        <aside class="utility-panel" aria-label="游戏工具">
+          <div class="tool-group">
+            <button id="save-game" class="tool-button" type="button">保存</button>
+            <button id="restart-game" class="tool-button danger" type="button">重新开始</button>
+          </div>
+
+          <section class="journal-card">
+            <div class="journal-tabs" role="tablist" aria-label="记录切换">
+              <button id="history-tab" class="tab-button active" type="button">历史记录</button>
+              <button id="clues-tab" class="tab-button" type="button">线索簿</button>
+            </div>
+            <span id="save-status">未保存</span>
+            <ol id="history-list" class="journal-list"></ol>
+            <ol id="clue-list" class="journal-list hidden"></ol>
+          </section>
+        </aside>
+      </section>
+
+      <section id="ending-screen" class="screen ending-screen hidden">
+        <p class="file-mark">Case Closed</p>
+        <h2 id="ending-title">结局</h2>
+        <div id="ending-text" class="ending-text"></div>
+        <button id="ending-restart" class="primary-button" type="button">重新开始</button>
+      </section>
+    </main>
+
+    <script src="story.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
